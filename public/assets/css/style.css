@@ -341,7 +341,7 @@ table.dataTable thead > tr > td.sorting {
 	padding-right: 30px !important;
 }
 .table.custom-table > tbody > tr > td, .table.custom-table > tbody > tr > th, .table.custom-table > tfoot > tr > td, .table.custom-table > tfoot > tr > th, .table.custom-table > thead > tr > td, .table.custom-table > thead > tr > th {
-	padding: 10px 20px !important;
+	padding: 10px 20px 10px 20px!important;
 }
 /*-----------------
 	3. Helper Class
@@ -785,7 +785,7 @@ table.dataTable thead > tr > td.sorting {
 	box-shadow: unset;
 }
 .dropdown-item.active, .dropdown-item:active {
-	background-color: #f43b48;
+	background-color: #ffffff;
 }
 .list-group-item {
 	border: 1px solid #e3e3e3;
@@ -3214,7 +3214,7 @@ table.dataTable thead > tr > td.sorting {
     padding: 0;
 }
 .table .dropdown-menu .dropdown-item {
-	padding: 5px 10px;
+	padding: 0px;
 }
 .dropdown-action .dropdown-toggle::after {
 	display: none;

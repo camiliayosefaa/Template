@@ -25,49 +25,47 @@
             <form action="{{ route('search/user/list') }}" method="POST">
                 @csrf
                 <div class="row filter-row">
-                    <div class="col-sm-6 col-md-3">  
+                    <div class="col-sm-6 col-md-3">
                         <div class="form-group form-focus">
                             <input type="text" class="form-control floating" id="name" name="name">
-                            <label class="focus-label">User Name</label>
+                            <label class="focus-label">Name</label>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3">  
+                    {{-- <div class="col-sm-6 col-md-3">
                         <div class="form-group form-focus">
                             <input type="text" class="form-control floating" id="name" name="role_name">
                             <label class="focus-label">Role Name</label>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3"> 
+                    <div class="col-sm-6 col-md-3">
                         <div class="form-group form-focus">
                             <input type="text" class="form-control floating" id="name" name="status">
                             <label class="focus-label">Status</label>
                         </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">  
-                        <button type="sumit" class="btn btn-success btn-block"> Search </button>  
+                    </div> --}}
+                    <div class="col-sm-6 col-md-3">
+                        <button type="sumit" class="btn btn-success btn-block"> Search </button>
                     </div>
                 </div>
-            </form>     
+            </form>
             <!-- /Search Filter -->
             {{-- message --}}
             {!! Toastr::message() !!}
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
-                        <table class="table table-striped custom-table datatable">
+                        <table class="table table-striped custom-table">
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>User ID</th>
-                                    <th hidden></th>
                                     <th>Email</th>
-                                    <th>Position</th>
+                                    {{-- <th>Position</th>
                                     <th>Phone</th>
                                     <th>Join Date</th>
                                     <th>Role</th>
                                     <th>Status</th>
-                                    <th>Departement</th>
-                                    <th class="text-right">Action</th>
+                                    <th>Departement</th> --}}
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,10 +78,10 @@
                                             <a href="{{ url('employee/profile/'.$user->user_id) }}" class="name">{{ $user->name }}</span></a>
                                         </h2>
                                     </td>
-                                    <td hidden class="ids">{{ $user->id }}</td>
-                                    <td class="id">{{ $user->user_id }}</td>
+                                    {{-- <td hidden class="ids">{{ $user->id }}</td>
+                                    <td class="id">{{ $user->user_id }}</td> --}}
                                     <td class="email">{{ $user->email }}</td>
-                                    <td class="position">{{ $user->position }}</td>
+                                    {{-- <td class="position">{{ $user->position }}</td>
                                     <td class="phone_number">{{ $user->phone_number }}</td>
                                     <td>{{ $user->join_date }}</td>
                                     <td>
@@ -98,8 +96,8 @@
                                             @elseif ($user->role_name=='Employee')
                                             <span class="badge bg-inverse-dark role_name">{{ $user->role_name }}</span>
                                         @endif
-                                    </td>
-                                    <td>
+                                    </td> --}}
+                                    {{-- <td>
                                         <div class="dropdown action-label">
                                             @if ($user->status=='Active')
                                                 <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
@@ -122,7 +120,7 @@
                                                     <span class="statuss">N/A</span>
                                                 </a>
                                             @endif
-                                            
+
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a class="dropdown-item" href="#">
                                                     <i class="fa fa-dot-circle-o text-success"></i> Active
@@ -135,16 +133,20 @@
                                                 </a>
                                             </div>
                                         </div>
-                                    </td>
-                                    <td class="department">{{ $user->department }}</td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
+                                    </td> --}}
+                                    {{-- <td class="department">{{ $user->department }}</td> --}}
+                                    <td>
+                                        <div>
+                                            <a class="dropdown-item userUpdate" data-toggle="modal" data-id="'.$user->id.'" data-target="#edit_user""><button type="button" class="btn btn-success">Edit</button></a>
+                                            <a class="dropdown-item userDelete" href="#" data-toggle="modal" ata-id="'.$user->id.'" data-target="#delete_user"><button type="button" class="btn btn-secondary">Delete</button></a>
+                                        </div>
+                                        {{-- <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
+                                            <div class="dropdown-menu">
                                                 <a class="dropdown-item userUpdate" data-toggle="modal" data-id="'.$user->id.'" data-target="#edit_user"><i class="fa fa-pencil m-r-5"></i> Edit</a>
                                                 <a class="dropdown-item userDelete" href="#" data-toggle="modal" ata-id="'.$user->id.'" data-target="#delete_user"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </td>
                                 </tr>
                                 @endforeach
@@ -155,7 +157,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-        
+
 
         <!-- Add User Modal -->
         <div id="add_user" class="modal custom-modal fade" role="dialog">
@@ -170,20 +172,20 @@
                     <div class="modal-body">
                         <form action="{{ route('user/add/save') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="row"> 
-                                <div class="col-sm-6"> 
+                            <div class="row">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Full Name</label>
                                         <input class="form-control @error('name') is-invalid @enderror" type="text" id="" name="name" value="{{ old('name') }}" placeholder="Enter Name">
                                     </div>
                                 </div>
-                                <div class="col-sm-6"> 
+                                <div class="col-sm-6">
                                     <label>Emaill Address</label>
                                     <input class="form-control" type="email" id="" name="email" placeholder="Enter Email">
                                 </div>
                             </div>
-                            <div class="row"> 
-                                <div class="col-sm-6"> 
+                            <div class="row">
+                                <div class="col-sm-6">
                                     <label>Role Name</label>
                                     <select class="select" name="role_name" id="role_name">
                                         <option selected disabled> --Select --</option>
@@ -192,7 +194,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-sm-6"> 
+                                <div class="col-sm-6">
                                     <label>Position</label>
                                     <select class="select" name="position" id="position">
                                         <option selected disabled> --Select --</option>
@@ -203,14 +205,14 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="row"> 
-                                <div class="col-sm-6"> 
+                            <div class="row">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Phone</label>
                                         <input class="form-control" type="tel" id="" name="phone" placeholder="Enter Phone">
                                     </div>
                                 </div>
-                                <div class="col-sm-6"> 
+                                <div class="col-sm-6">
                                     <label>Department</label>
                                     <select class="select" name="department" id="department">
                                         <option selected disabled> --Select --</option>
@@ -220,8 +222,8 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="row"> 
-                                <div class="col-sm-6"> 
+                            <div class="row">
+                                <div class="col-sm-6">
                                     <label>Status</label>
                                     <select class="select" name="status" id="status">
                                         <option selected disabled> --Select --</option>
@@ -230,20 +232,20 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-sm-6"> 
+                                <div class="col-sm-6">
                                     <label>Photo</label>
                                     <input class="form-control" type="file" id="image" name="image">
                                 </div>
                             </div>
                             <br>
-                            <div class="row"> 
-                                <div class="col-sm-6"> 
+                            <div class="row">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Password</label>
                                         <input type="password" class="form-control" name="password" placeholder="Enter Password">
                                     </div>
                                 </div>
-                                <div class="col-sm-6"> 
+                                <div class="col-sm-6">
                                     <label>Repeat Password</label>
                                     <input type="password" class="form-control" name="password_confirmation" placeholder="Choose Repeat Password">
                                 </div>
@@ -257,7 +259,7 @@
             </div>
         </div>
         <!-- /Add User Modal -->
-				
+
         <!-- Edit User Modal -->
         <div id="edit_user" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-md" role="document">
@@ -273,20 +275,20 @@
                         <form action="{{ route('update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="user_id" id="e_id" value="">
-                            <div class="row"> 
-                                <div class="col-sm-6"> 
+                            <div class="row">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Name</label>
                                         <input class="form-control" type="text" name="name" id="e_name" value="" />
                                     </div>
                                 </div>
-                                <div class="col-sm-6"> 
+                                <div class="col-sm-6">
                                     <label>Email</label>
                                     <input class="form-control" type="text" name="email" id="e_email" value=""/>
                                 </div>
                             </div>
-                            <div class="row"> 
-                                <div class="col-sm-6"> 
+                            <div class="row">
+                                <div class="col-sm-6">
                                     <label>Role Name</label>
                                     <select class="select" name="role_name" id="e_role_name">
                                         @foreach ($role_name as $role )
@@ -294,7 +296,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-sm-6"> 
+                                <div class="col-sm-6">
                                     <label>Position</label>
                                     <select class="select" name="position" id="e_position">
                                         @foreach ($position as $positions )
@@ -304,14 +306,14 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="row"> 
-                                <div class="col-sm-6"> 
+                            <div class="row">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Phone</label>
                                         <input class="form-control" type="text" id="e_phone_number" name="phone" placeholder="Enter Phone">
                                     </div>
                                 </div>
-                                <div class="col-sm-6"> 
+                                <div class="col-sm-6">
                                     <label>Department</label>
                                     <select class="select" name="department" id="e_department">
                                         @foreach ($department as $departments )
@@ -320,8 +322,8 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="row"> 
-                                <div class="col-sm-6"> 
+                            <div class="row">
+                                <div class="col-sm-6">
                                     <label>Status</label>
                                     <select class="select" name="status" id="e_status">
                                         @foreach ($status_user as $status )
@@ -329,7 +331,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-sm-6"> 
+                                <div class="col-sm-6">
                                     <label>Photo</label>
                                     <input class="form-control" type="file" id="image" name="images">
                                     <input type="hidden" name="hidden_image" id="e_image" value="">
@@ -345,7 +347,7 @@
             </div>
         </div>
         <!-- /Edit Salary Modal -->
-				
+
         <!-- Delete User Modal -->
         <div class="modal custom-modal fade" id="delete_user" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -404,7 +406,7 @@
             var statuss = (_this.find(".statuss").text());
             var _option = '<option selected value="' +statuss+ '">' + _this.find('.statuss').text() + '</option>'
             $( _option).appendTo("#e_status");
-            
+
         });
     </script>
     {{-- delete js --}}

@@ -4,9 +4,9 @@
     <div class="sidebar-inner slimscroll">
         <div id="sidebar-menu" class="sidebar-menu">
             <ul>
-                <li class="menu-title">
+                {{-- <li class="menu-title">
                     <span>Menu</span>
-                </li>
+                </li> --}}
                 <li class="{{set_active(['home'])}}">
                     <a href="{{ route('home') }}" class="{{ set_active(['home']) }}">
                         <i class="la la-dashboard"></i>
@@ -18,16 +18,15 @@
                     </ul> --}}
                 </li>
                 @if (Auth::user()->role_name=='Admin')
-                    <li class="menu-title"> <span>Authentication</span> </li>
-                    <li class="{{set_active(['search/user/list','userManagement','activity/log','activity/login/logout'])}} submenu">
-                        <a href="#" class="{{ set_active(['search/user/list','userManagement','activity/log','activity/login/logout']) ? 'noti-dot' : '' }}">
-                            <i class="la la-user-secret"></i> <span> User Controller</span> <span class="menu-arrow"></span>
+                    <li><a class="{{set_active(['userManagement'])}}" href="{{ route('userManagement') }}">
+                            <i class="la la-user-secret"></i>
+                            <span> User Management </span>
                         </a>
-                        <ul style="{{ request()->is('/*') ? 'display: block;' : 'display: none;' }}">
+                        {{-- <ul style="{{ request()->is('/*') ? 'display: block;' : 'display: none;' }}">
                             <li><a class="{{set_active(['search/user/list','userManagement'])}}" href="{{ route('userManagement') }}">All User</a></li>
                             <li><a class="{{set_active(['activity/log'])}}" href="{{ route('activity/log') }}">Activity Log</a></li>
                             <li><a class="{{set_active(['activity/login/logout'])}}" href="{{ route('activity/login/logout') }}">Activity User</a></li>
-                        </ul>
+                        </ul> --}}
                     </li>
                 @endif
                 <li class="menu-title"> <span>Employees</span> </li>
