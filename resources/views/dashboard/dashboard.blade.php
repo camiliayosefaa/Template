@@ -20,25 +20,7 @@
                     <div class="card dash-widget">
                         <div class="card-body"> <span class="dash-widget-icon"><i class="fa fa-cubes"></i></span>
                             <div class="dash-widget-info">
-                                <h3>112</h3> <span>Projects</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                    <div class="card dash-widget">
-                        <div class="card-body"> <span class="dash-widget-icon"><i class="fa fa-usd"></i></span>
-                            <div class="dash-widget-info">
-                                <h3>44</h3> <span>Clients</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                    <div class="card dash-widget">
-                        <div class="card-body"> <span class="dash-widget-icon"><i class="fa fa-diamond"></i></span>
-                            <div class="dash-widget-info">
-                                <h3>37</h3> <span>Tasks</span>
+                                <h3>112</h3> <span>User Active</span>
                             </div>
                         </div>
                     </div>
@@ -47,19 +29,37 @@
                     <div class="card dash-widget">
                         <div class="card-body"> <span class="dash-widget-icon"><i class="fa fa-user"></i></span>
                             <div class="dash-widget-info">
-                                <h3>218</h3> <span>Employees</span>
+                                <h3>150</h3> <span>Present</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="card dash-widget">
+                        <div class="card-body"> <span class="dash-widget-icon"><i class="fa fa-user"></i></span>
+                            <div class="dash-widget-info">
+                                <h3>2</h3> <span>Absent</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="card dash-widget">
+                        <div class="card-body"> <span class="dash-widget-icon"><i class="fa fa-user"></i></span>
+                            <div class="dash-widget-info">
+                                <h3>1</h3> <span>No Information</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-6 text-center">
+                        <div class="col-md-12 text-center">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="card-title">Total Revenue</h3>
+                                    <h3 class="card-title">User Active</h3>
                                     <div id="bar-charts"></div>
                                 </div>
                             </div>
@@ -67,15 +67,15 @@
                         <div class="col-md-6 text-center">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="card-title">Sales Overview</h3>
+                                    <h3 class="card-title">Total Absent</h3>
                                     <div id="line-charts"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
+            </div> --}}
+            {{-- <div class="row">
                 <div class="col-md-12">
                     <div class="card-group m-b-30">
                         <div class="card">
@@ -132,11 +132,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- message --}}
             {!! Toastr::message() !!}
             <!-- Statistics Widget -->
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-12 col-lg-12 col-xl-4 d-flex">
                     <div class="card flex-fill dash-statistics">
                         <div class="card-body">
@@ -176,6 +176,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-12 col-lg-6 col-xl-4 d-flex">
                     <div class="card flex-fill">
                         <div class="card-body">
@@ -212,21 +213,38 @@
                             </div>
                         </div>
                     </div>
+                </div> --}}
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">2023</h3>
+                            <div id="bar-charts"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12 col-lg-6 col-xl-4 d-flex">
+                {{-- <div class="col-md-6 col-lg-12 col-xl-6 d-flex">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">User Active</h3>
+                            <div id="bar-charts"></div>
+                        </div>
+                    </div>
+                </div> --}}
+                <div class="col-md-6 col-lg-12 col-xl-6 d-flex">
                     <div class="card flex-fill">
                         <div class="card-body">
-                            <h4 class="card-title">Today Absent <span class="badge bg-inverse-danger ml-2">5</span></h4>
+                            <h4 class="card-title">JUNE<span class="badge bg-inverse-danger ml-2">5</span></h4>
                             <div class="leave-info-box">
                                 <div class="media align-items-center">
                                     <a href="profile.html" class="avatar"><img alt="" src="assets/img/user.jpg"></a>
                                     <div class="media-body">
-                                        <div class="text-sm my-0">Martin Lewis</div>
+                                        <div class="text-sm my-0">Asep</div>
                                     </div>
                                 </div>
                                 <div class="row align-items-center mt-3">
                                     <div class="col-6">
-                                        <h6 class="mb-0">4 Sep 2019</h6> <span class="text-sm text-muted">Leave Date</span> </div>
+                                        <h6 class="mb-0">21 Juni 2023</h6> <span class="text-sm text-muted">Leave Date</span> </div>
                                     <div class="col-6 text-right"> <span class="badge bg-inverse-danger">Pending</span> </div>
                                 </div>
                             </div>
@@ -234,12 +252,12 @@
                                 <div class="media align-items-center">
                                     <a href="profile.html" class="avatar"><img alt="" src="assets/img/user.jpg"></a>
                                     <div class="media-body">
-                                        <div class="text-sm my-0">Martin Lewis</div>
+                                        <div class="text-sm my-0">Udin</div>
                                     </div>
                                 </div>
                                 <div class="row align-items-center mt-3">
                                     <div class="col-6">
-                                        <h6 class="mb-0">4 Sep 2019</h6> <span class="text-sm text-muted">Leave Date</span> </div>
+                                        <h6 class="mb-0">21 Juni 2023</h6> <span class="text-sm text-muted">Leave Date</span> </div>
                                     <div class="col-6 text-right"> <span class="badge bg-inverse-success">Approved</span> </div>
                                 </div>
                             </div>
@@ -249,7 +267,7 @@
                 </div>
             </div>
             <!-- /Statistics Widget -->
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-6 d-flex">
                     <div class="card card-table flex-fill">
                         <div class="card-header">
@@ -405,7 +423,7 @@
                                                         </a>
                                                         <a class="dropdown-item" href="javascript:void(0)">
                                                             <i class="fa fa-trash-o m-r-5"></i> Delete
-                                                        </a> 
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </td>
@@ -534,7 +552,7 @@
                                                     <div class="dropdown-menu dropdown-menu-right">
                                                         <a class="dropdown-item" href="#">
                                                             <i class="fa fa-dot-circle-o text-success"></i> Active
-                                                        </a> 
+                                                        </a>
                                                         <a class="dropdown-item" href="#">
                                                             <i class="fa fa-dot-circle-o text-danger"></i> Inactive
                                                         </a>
@@ -582,7 +600,7 @@
                                                 <h2>
                                                     <a href="project-view.html">Office Management</a>
                                                 </h2>
-                                                <small class="block text-ellipsis">   
+                                                <small class="block text-ellipsis">
                                                     <span>1</span> <span class="text-muted">open tasks, </span>
                                                     <span>9</span> <span class="text-muted">tasks completed</span>
                                                 </small>
@@ -610,7 +628,7 @@
                                             <td>
                                                 <h2>
                                                     <a href="project-view.html">Project Management</a>
-                                                </h2> 
+                                                </h2>
                                                 <small class="block text-ellipsis">
                                                     <span>2</span> <span class="text-muted">open tasks, </span>
                                                     <span>5</span> <span class="text-muted">tasks completed</span>
@@ -702,7 +720,7 @@
                                                     <span>7</span> <span class="text-muted">open tasks, </span>
                                                     <span>14</span> <span class="text-muted">tasks completed</span>
                                                 </small>
-                                            
+
                                             </td>
                                             <td>
                                                 <div class="progress progress-xs progress-striped">
@@ -726,10 +744,10 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-                        <div class="card-footer">
+                        </div> --}}
+                        {{-- <div class="card-footer">
                             <a href="projects.html">View all projects</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

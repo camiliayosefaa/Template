@@ -1,48 +1,46 @@
 $(document).ready(function() {
 
 	// Bar Chart
-	
+
 	Morris.Bar({
 		element: 'bar-charts',
 		data: [
-			{ y: '2006', a: 100, b: 90 },
-			{ y: '2007', a: 75,  b: 65 },
-			{ y: '2008', a: 50,  b: 40 },
-			{ y: '2009', a: 75,  b: 65 },
-			{ y: '2010', a: 50,  b: 40 },
-			{ y: '2011', a: 75,  b: 65 },
-			{ y: '2012', a: 100, b: 90 }
+			{ y: 'Jan', a: 100, b: 0 },
+			{ y: 'Feb', a: 100,  b: 0 },
+			{ y: 'Mar', a: 80,  b: 20 },
+			{ y: 'Apr', a: 75,  b: 25 },
+			{ y: 'May', a: 95,  b: 5 },
+			{ y: 'June', a: 80,  b: 20 }
 		],
 		xkey: 'y',
 		ykeys: ['a', 'b'],
-		labels: ['Total Income', 'Total Outcome'],
+		labels: ['Active User (%)', 'Total Absent (%)'],
 		lineColors: ['#f43b48','#453a94'],
 		lineWidth: '3px',
-		barColors: ['#f43b48','#453a94'],
+		barColors: ['#AEE2FF','#453a94'],
 		resize: true,
 		redraw: true
 	});
-	
+
 	// Line Chart
-	
+
 	Morris.Line({
 		element: 'line-charts',
 		data: [
-			{ y: '2006', a: 50, b: 90 },
-			{ y: '2007', a: 75,  b: 65 },
-			{ y: '2008', a: 50,  b: 40 },
-			{ y: '2009', a: 75,  b: 65 },
-			{ y: '2010', a: 50,  b: 40 },
-			{ y: '2011', a: 75,  b: 65 },
-			{ y: '2012', a: 100, b: 50 }
+			{ y: 'Jan', a: 100, b: 0 },
+			{ y: 'Feb', a: 100,  b: 0 },
+			{ y: 'Mar', a: 80,  b: 20 },
+			{ y: 'Apr', a: 75,  b: 25 },
+			{ y: 'May', a: 95,  b: 5 },
+			{ y: 'June', a: 80,  b: 20 }
 		],
 		xkey: 'y',
 		ykeys: ['a', 'b'],
-		labels: ['Total Sales', 'Total Revenue'],
-		lineColors: ['#f43b48','#453a94'],
+		labels: ['Active User (%)', 'Total Absent (%)'],
+		lineColors: ['#AEE2FF','#453a94'],
 		lineWidth: '3px',
 		resize: true,
 		redraw: true
 	});
-		
+
 });
