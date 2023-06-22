@@ -59,11 +59,11 @@
 		<!-- Header -->
 		<div class="header">
 			<!-- Logo -->
-			{{-- <div class="header-left">
-				<a href="{{ route('home') }}" class="logo">
-					<img src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}" width="40" height="40" alt="">
+			<div class="header-left">
+				<a class="logo">
+					<img src="{{ URL::to('assets/img/logstaffTransparant.jpg') }}" width="40" height="40" alt="">
 				</a>
-			</div> --}}
+			</div>
 			<!-- /Logo -->
 			<a id="toggle_btn" href="javascript:void(0);">
 				<span class="bar-icon">

@@ -2,11 +2,10 @@
 @section('content')
     <div class="main-wrapper">
         <div class="account-content">
-            <a href="{{ route('form/job/list') }}" class="btn btn-primary apply-btn">Apply Job</a>
             <div class="container">
                 <!-- Account Logo -->
                 <div class="account-logo">
-                    <a href="index.html"><img src="{{ URL::to('assets/img/logo2.png') }}" alt="SoengSouy"></a>
+                    <a href="index.html"><img src="{{ URL::to('assets/img/logstaffTransparant.png') }}" alt=""></a>
                 </div>
                 {{-- message --}}
                 {!! Toastr::message() !!}
@@ -38,8 +37,8 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label><strong>Repeat Password</strong></label>
-                                <input type="password" class="form-control" name="password_confirmation" placeholder="Choose Repeat Password">
+                                <label><strong>Confirm Password</strong></label>
+                                <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
                             </div>
                             <div class="form-group text-center">
                                 <button class="btn btn-primary account-btn" type="submit">Reset Password</button>

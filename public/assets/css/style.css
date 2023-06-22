@@ -1883,11 +1883,11 @@ table.dataTable thead > tr > td.sorting {
 	margin-bottom: 25px;
 }
 .account-box .account-btn {
-	background: #a0e3ff;
-	background: -moz-linear-gradient(left, #a0e3ff 0%, #453a94 100%);
-	background: -webkit-linear-gradient(left, #a0e3ff 0%, #453a94 100%);
-	background: -ms-linear-gradient(left, #a0e3ff 0%, #453a94 100%);
-	background: linear-gradient(to right, #a0e3ff 0%, #453a94 100%);
+    background: #C3EEF1;
+	background: -moz-linear-gradient(left, #453a94 0%, #453a94 100%);
+	background: -webkit-linear-gradient(left, #453a94 0%, #453a94 100%);
+	background: -ms-linear-gradient(left, #453a94 0%, #453a94 100%);
+	background: linear-gradient(to right, #453a94 0%, #453a94 100%);
 	border: 0;
     border-radius: 4px;
     display: block;
@@ -6051,7 +6051,7 @@ table.table-inbox tbody tr.checked {
 
 .error-page {
     align-items: center;
-    background-color: #AEE2FF;
+     background-color: #C3EEF1;;
     color: #1f1f1f;
     display: flex;
 }
