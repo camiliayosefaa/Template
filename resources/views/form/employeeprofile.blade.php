@@ -7,18 +7,60 @@
             <div class="page-header">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h3 class="page-title">Profile</h3>
+                        <h3 class="page-title">Detail User</h3>
+                        <h4>Nama: </h4>
+                        <h4>Organisasi: </h4>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Profile</li>
+                            <li class="breadcrumb-item"><a href="{{ route('userManagement') }}">User Management</a></li>
+                            <li class="breadcrumb-item active">Detail User</li>
                         </ul>
                     </div>
                 </div>
             </div>
             {{-- message --}}
             {!! Toastr::message() !!}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Absensi</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Keterangan</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h2 class="table-avatar">
+                                            21 Juni 2023
+                                        </h2>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Present</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div>
+                                            <a><button type="button" class="btn btn-success" >Show</button></a>
+                                            <a><button type="button" class="btn btn-success">Delete</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
             <!-- /Page Header -->
-            <div class="card mb-0">
+            {{-- <div class="card mb-0">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
@@ -89,7 +131,7 @@
                                                             {{ $user[0]->name }}
                                                         </a>
                                                     </div>
-                                                </li> 
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -100,7 +142,7 @@
                     </div>
                 </div>
             </div>
-					
+
             <div class="card tab-box">
                 <div class="row user-tabs">
                     <div class="col-lg-12 col-md-12 col-sm-12 line-tabs">
@@ -112,7 +154,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="tab-content">
                 <!-- Profile Info Tab -->
                 <div id="emp_profile" class="pro-overview tab-pane fade show active">
@@ -344,7 +386,7 @@
                     </div>
                 </div>
                 <!-- /Profile Info Tab -->
-                
+
                 <!-- Projects Tab -->
                 <div class="tab-pane fade" id="emp_projects">
                     <div class="row">
@@ -410,7 +452,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
                             <div class="card">
                                 <div class="card-body">
@@ -473,7 +515,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
                             <div class="card">
                                 <div class="card-body">
@@ -536,7 +578,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
                             <div class="card">
                                 <div class="card-body">
@@ -602,7 +644,7 @@
                     </div>
                 </div>
                 <!-- /Projects Tab -->
-                
+
                 <!-- Bank Statutory Tab -->
                 <div class="tab-pane fade" id="bank_statutory">
                     <div class="card">
@@ -743,7 +785,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <hr>
                                 <h3 class="card-title"> ESI Information</h3>
                                 <div class="row">
@@ -805,7 +847,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="submit-section">
                                     <button class="btn btn-primary submit-btn" type="submit">Save</button>
                                 </div>
@@ -995,7 +1037,7 @@
             </div>
         </div>
         <!-- /Profile Modal -->
-    
+
         <!-- Personal Info Modal -->
         <div id="personal_info_modal" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1077,7 +1119,7 @@
             </div>
         </div>
         <!-- /Personal Info Modal -->
-        
+
         <!-- Family Info Modal -->
         <div id="family_info_modal" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1122,7 +1164,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="card">
                                     <div class="card-body">
                                         <h3 class="card-title">Education Informations <a href="javascript:void(0);" class="delete-icon"><i class="fa fa-trash-o"></i></a></h3>
@@ -1167,7 +1209,7 @@
             </div>
         </div>
         <!-- /Family Info Modal -->
-        
+
         <!-- Emergency Contact Modal -->
         <div id="emergency_contact_modal" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1211,7 +1253,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="card-title">Primary Contact</h3>
@@ -1252,7 +1294,7 @@
             </div>
         </div>
         <!-- /Emergency Contact Modal -->
-        
+
         <!-- Education Modal -->
         <div id="education_info" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1313,7 +1355,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="card">
                                     <div class="card-body">
                                         <h3 class="card-title">Education Informations <a href="javascript:void(0);" class="delete-icon"><i class="fa fa-trash-o"></i></a></h3>
@@ -1374,7 +1416,7 @@
             </div>
         </div>
         <!-- /Education Modal -->
-        
+
         <!-- Experience Modal -->
         <div id="experience_info" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1429,7 +1471,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="card">
                                     <div class="card-body">
                                         <h3 class="card-title">Experience Informations <a href="javascript:void(0);" class="delete-icon"><i class="fa fa-trash-o"></i></a></h3>
@@ -1482,7 +1524,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- /Experience Modal -->
 
         <!-- /Page Content -->

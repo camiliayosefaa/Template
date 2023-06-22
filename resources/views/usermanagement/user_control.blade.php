@@ -9,10 +9,11 @@
                 <div class="row align-items-center">
                     <div class="col">
                         <h3 class="page-title">User Management</h3>
-                        <ul class="breadcrumb">
+                        <h4>Jumlah User: </h4>
+                        {{-- <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active">User</li>
-                        </ul>
+                        </ul> --}}
                     </div>
                     <div class="col-auto float-right ml-auto">
                         <a href="#" class="btn add-btn" data-toggle="modal" data-target="#add_user"><i class="fa fa-plus"></i> Add User</a>
@@ -58,13 +59,9 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
+                                    <th></th>
+                                    <th></th>
                                     <th>Email</th>
-                                    {{-- <th>Position</th>
-                                    <th>Phone</th>
-                                    <th>Join Date</th>
-                                    <th>Role</th>
-                                    <th>Status</th>
-                                    <th>Departement</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -74,79 +71,17 @@
                                     <td>
                                         <span hidden class="image">{{ $user->avatar}}</span>
                                         <h2 class="table-avatar">
-                                            <a href="{{ url('employee/profile/'.$user->user_id) }}" class="avatar"><img src="{{ URL::to('/assets/images/'. $user->avatar) }}" alt="{{ $user->avatar }}"></a>
                                             <a href="{{ url('employee/profile/'.$user->user_id) }}" class="name">{{ $user->name }}</span></a>
                                         </h2>
                                     </td>
-                                    {{-- <td hidden class="ids">{{ $user->id }}</td>
-                                    <td class="id">{{ $user->user_id }}</td> --}}
+                                    <td></td>
+                                    <td></td>
                                     <td class="email">{{ $user->email }}</td>
-                                    {{-- <td class="position">{{ $user->position }}</td>
-                                    <td class="phone_number">{{ $user->phone_number }}</td>
-                                    <td>{{ $user->join_date }}</td>
-                                    <td>
-                                        @if ($user->role_name=='Admin')
-                                            <span class="badge bg-inverse-danger role_name">{{ $user->role_name }}</span>
-                                            @elseif ($user->role_name=='Super Admin')
-                                            <span class="badge bg-inverse-warning role_name">{{ $user->role_name }}</span>
-                                            @elseif ($user->role_name=='Normal User')
-                                            <span class="badge bg-inverse-info role_name">{{ $user->role_name }}</span>
-                                            @elseif ($user->role_name=='Client')
-                                            <span class="badge bg-inverse-success role_name">{{ $user->role_name }}</span>
-                                            @elseif ($user->role_name=='Employee')
-                                            <span class="badge bg-inverse-dark role_name">{{ $user->role_name }}</span>
-                                        @endif
-                                    </td> --}}
-                                    {{-- <td>
-                                        <div class="dropdown action-label">
-                                            @if ($user->status=='Active')
-                                                <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-success"></i>
-                                                    <span class="statuss">{{ $user->status }}</span>
-                                                </a>
-                                                @elseif ($user->status=='Inactive')
-                                                <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-info"></i>
-                                                    <span class="statuss">{{ $user->status }}</span>
-                                                </a>
-                                                @elseif ($user->status=='Disable')
-                                                <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-danger"></i>
-                                                    <span class="statuss">{{ $user->status }}</span>
-                                                </a>
-                                                @elseif ($user->status=='')
-                                                <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-dark"></i>
-                                                    <span class="statuss">N/A</span>
-                                                </a>
-                                            @endif
-
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="fa fa-dot-circle-o text-success"></i> Active
-                                                </a>
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="fa fa-dot-circle-o text-warning"></i> Inactive
-                                                </a>
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="fa fa-dot-circle-o text-danger"></i> Disable
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </td> --}}
-                                    {{-- <td class="department">{{ $user->department }}</td> --}}
                                     <td>
                                         <div>
-                                            <a class="dropdown-item userUpdate" data-toggle="modal" data-id="'.$user->id.'" data-target="#edit_user""><button type="button" class="btn btn-success">Edit</button></a>
-                                            <a class="dropdown-item userDelete" href="#" data-toggle="modal" ata-id="'.$user->id.'" data-target="#delete_user"><button type="button" class="btn btn-secondary">Delete</button></a>
+                                            <a href="{{ url('employee/profile/'.$user->user_id) }}"><button type="button" class="btn btn-success" data-id="'.$user->id.'" data-target="#edit_user">Show</button></a>
+                                            <a><button type="button" class="btn btn-success" data-id="'.$user->id.'" data-target="#edit_user">Edit</button></a>
                                         </div>
-                                        {{-- <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item userUpdate" data-toggle="modal" data-id="'.$user->id.'" data-target="#edit_user"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item userDelete" href="#" data-toggle="modal" ata-id="'.$user->id.'" data-target="#delete_user"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
-                                        </div> --}}
                                     </td>
                                 </tr>
                                 @endforeach

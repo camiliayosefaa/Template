@@ -9,14 +9,15 @@
             <div class="page-header">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="page-title">Holidays <span id="year"></span></h3>
-                        <ul class="breadcrumb">
+                        <h3 class="page-title">ORGANIZATION</h3>
+                        <h4>Organization registered: </h4>
+                        {{-- <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Holidays</li>
-                        </ul>
+                            <li class="breadcrumb-item active">Detail Org</li>
+                        </ul> --}}
                     </div>
                     <div class="col-auto float-right ml-auto">
-                        <a href="#" class="btn add-btn" data-toggle="modal" data-target="#add_holiday"><i class="fa fa-plus"></i> Add Holiday</a>
+                        <a href="#" class="btn add-btn" data-toggle="modal" data-target="#add_holiday"><i class="fa fa-plus"></i> Add Organization </a>
                     </div>
                 </div>
             </div>
@@ -31,29 +32,37 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
-                        <table class="table table-striped custom-table datatable">
+                        <table class="table table-striped custom-table">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Title </th>
-                                    <th>Holiday Date</th>
-                                    <th>Day</th>
-                                    <th class="text-right">Action</th>
+                                    <th>Name</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Email</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($holiday as $key=>$items )
-                                    @if(($today_date > $items->date_holiday))
-                                        <tr class="holiday-completed">
-                                            <td>{{ ++$key }}</td>
-                                            <td>{{ $items->name_holiday }}</td>
-                                            <td>{{date('d F, Y',strtotime($items->date_holiday)) }}</td>
-                                            <td>{{date('l',strtotime($items->date_holiday)) }}</td>
-                                            <td></td>
-                                        </tr>
-                                    @endif
-                                @endforeach
-                                @foreach ($holiday as $key=>$items )
+                                 <tr>
+                                    <td><a href="#"></a>Jasa</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>jasa@gmail.com</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div>
+                                            <a><button type="button" class="btn btn-success" data-id="'.$user->id.'" data-target="#edit_user">Edit</button></a>
+                                            <a><button type="button" class="btn btn-success" data-id="'.$user->id.'" data-target="#edit_user">Show</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                {{-- @foreach ($holiday as $key=>$items )
                                     @if(($today_date <= $items->date_holiday))
                                         <tr class="holiday-upcoming">
                                             <td hidden class="id">{{ $items->id }}</td>
@@ -73,7 +82,7 @@
                                             </td>
                                         </tr>
                                     @endif
-                                @endforeach
+                                @endforeach --}}
                             </tbody>
                         </table>
                     </div>
@@ -172,7 +181,7 @@
             </div>
         </div>
         <!-- /Delete Holiday Modal -->
-       
+
     </div>
     <!-- /Page Wrapper -->
     @section('script')
@@ -186,7 +195,7 @@
             var _this = $(this).parents('tr');
             $('#e_id').val(_this.find('.id').text());
             $('#holidayName_edit').val(_this.find('.holidayName').text());
-            $('#holidayDate_edit').val(_this.find('.holidayDate').text());  
+            $('#holidayDate_edit').val(_this.find('.holidayDate').text());
         });
     </script>
     @endsection
